@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3FAA155237B9D0D00D0F38D /* GxPasscodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA153237B9D0D00D0F38D /* GxPasscodeController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA160237B9D9900D0F38D /* GxPasscodeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA15B237B9D9900D0F38D /* GxPasscodeSettingsViewController.m */; };
+		C3FAA162237B9D9900D0F38D /* GxPasscodeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA15D237B9D9900D0F38D /* GxPasscodeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA163237B9D9900D0F38D /* GxPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA15E237B9D9900D0F38D /* GxPasscodeViewController.m */; };
+		C3FAA164237B9D9900D0F38D /* GxPasscodeSettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA15F237B9D9900D0F38D /* GxPasscodeSettingsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA167237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA166237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA171237B9DD000D0F38D /* GxPasscodeCircleImage.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA169237B9DD000D0F38D /* GxPasscodeCircleImage.h */; };
+		C3FAA172237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA16A237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.h */; };
+		C3FAA173237B9DD000D0F38D /* GxPasscodeViewContentLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA16B237B9DD000D0F38D /* GxPasscodeViewContentLayout.h */; };
+		C3FAA174237B9DD000D0F38D /* GxSettingsKeypadImage.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA16C237B9DD000D0F38D /* GxSettingsKeypadImage.h */; };
+		C3FAA175237B9DD000D0F38D /* GxPasscodeCircleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA16D237B9DD000D0F38D /* GxPasscodeCircleImage.m */; };
+		C3FAA176237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA16E237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.m */; };
+		C3FAA177237B9DD000D0F38D /* GxSettingsKeypadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA16F237B9DD000D0F38D /* GxSettingsKeypadImage.m */; };
+		C3FAA178237B9DD000D0F38D /* GxPasscodeViewContentLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA170237B9DD000D0F38D /* GxPasscodeViewContentLayout.m */; };
+		C3FAA193237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA17B237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.h */; };
+		C3FAA194237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA17C237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.h */; };
+		C3FAA195237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA17D237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.h */; };
+		C3FAA196237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA17E237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.m */; };
+		C3FAA197237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA17F237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.m */; };
+		C3FAA198237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA180237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.m */; };
+		C3FAA199237B9DEA00D0F38D /* GxPasscodeCircleView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA182237B9DEA00D0F38D /* GxPasscodeCircleView.h */; };
+		C3FAA19A237B9DEA00D0F38D /* GxPasscodeFixedInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA183237B9DEA00D0F38D /* GxPasscodeFixedInputView.h */; };
+		C3FAA19B237B9DEA00D0F38D /* GxPasscodeVariableInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA184237B9DEA00D0F38D /* GxPasscodeVariableInputView.h */; };
+		C3FAA19C237B9DEA00D0F38D /* GxPasscodeButtonLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA185237B9DEA00D0F38D /* GxPasscodeButtonLabel.h */; };
+		C3FAA19D237B9DEA00D0F38D /* GxPasscodeInputField.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA186237B9DEA00D0F38D /* GxPasscodeInputField.h */; };
+		C3FAA19E237B9DEA00D0F38D /* GxPasscodeFixedInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA187237B9DEA00D0F38D /* GxPasscodeFixedInputView.m */; };
+		C3FAA19F237B9DEA00D0F38D /* GxPasscodeCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA188237B9DEA00D0F38D /* GxPasscodeCircleView.m */; };
+		C3FAA1A0237B9DEA00D0F38D /* GxPasscodeButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA189237B9DEA00D0F38D /* GxPasscodeButtonLabel.m */; };
+		C3FAA1A1237B9DEA00D0F38D /* GxPasscodeVariableInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA18A237B9DEA00D0F38D /* GxPasscodeVariableInputView.m */; };
+		C3FAA1A2237B9DEA00D0F38D /* GxPasscodeInputField.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA18B237B9DEA00D0F38D /* GxPasscodeInputField.m */; };
+		C3FAA1A3237B9DEA00D0F38D /* GxPasscodeKeypadView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA18D237B9DEA00D0F38D /* GxPasscodeKeypadView.h */; };
+		C3FAA1A4237B9DEA00D0F38D /* GxPasscodeView.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA18E237B9DEA00D0F38D /* GxPasscodeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA1A5237B9DEA00D0F38D /* GxPasscodeCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA18F237B9DEA00D0F38D /* GxPasscodeCircleButton.m */; };
+		C3FAA1A6237B9DEA00D0F38D /* GxPasscodeKeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA190237B9DEA00D0F38D /* GxPasscodeKeypadView.m */; };
+		C3FAA1A7237B9DEA00D0F38D /* GxPasscodeCircleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA191237B9DEA00D0F38D /* GxPasscodeCircleButton.h */; };
+		C3FAA1A8237B9DEA00D0F38D /* GxPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA192237B9DEA00D0F38D /* GxPasscodeView.m */; };
+		C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C3FAA150237B9D0C00D0F38D /* GxPasscodeController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GxPasscodeController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3FAA153237B9D0D00D0F38D /* GxPasscodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GxPasscodeController.h; sourceTree = "<group>"; };
+		C3FAA154237B9D0D00D0F38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3FAA15B237B9D9900D0F38D /* GxPasscodeSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeSettingsViewController.m; sourceTree = "<group>"; };
+		C3FAA15D237B9D9900D0F38D /* GxPasscodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeViewController.h; sourceTree = "<group>"; };
+		C3FAA15E237B9D9900D0F38D /* GxPasscodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeViewController.m; sourceTree = "<group>"; };
+		C3FAA15F237B9D9900D0F38D /* GxPasscodeSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeSettingsViewController.h; sourceTree = "<group>"; };
+		C3FAA166237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeViewControllerConstants.h; sourceTree = "<group>"; };
+		C3FAA169237B9DD000D0F38D /* GxPasscodeCircleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeCircleImage.h; sourceTree = "<group>"; };
+		C3FAA16A237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeViewControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		C3FAA16B237B9DD000D0F38D /* GxPasscodeViewContentLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeViewContentLayout.h; sourceTree = "<group>"; };
+		C3FAA16C237B9DD000D0F38D /* GxSettingsKeypadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxSettingsKeypadImage.h; sourceTree = "<group>"; };
+		C3FAA16D237B9DD000D0F38D /* GxPasscodeCircleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeCircleImage.m; sourceTree = "<group>"; };
+		C3FAA16E237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeViewControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
+		C3FAA16F237B9DD000D0F38D /* GxSettingsKeypadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxSettingsKeypadImage.m; sourceTree = "<group>"; };
+		C3FAA170237B9DD000D0F38D /* GxPasscodeViewContentLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeViewContentLayout.m; sourceTree = "<group>"; };
+		C3FAA17B237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeSettingsKeypadView.h; sourceTree = "<group>"; };
+		C3FAA17C237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeSettingsWarningLabel.h; sourceTree = "<group>"; };
+		C3FAA17D237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeSettingsKeypadButton.h; sourceTree = "<group>"; };
+		C3FAA17E237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeSettingsKeypadView.m; sourceTree = "<group>"; };
+		C3FAA17F237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeSettingsWarningLabel.m; sourceTree = "<group>"; };
+		C3FAA180237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeSettingsKeypadButton.m; sourceTree = "<group>"; };
+		C3FAA182237B9DEA00D0F38D /* GxPasscodeCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeCircleView.h; sourceTree = "<group>"; };
+		C3FAA183237B9DEA00D0F38D /* GxPasscodeFixedInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeFixedInputView.h; sourceTree = "<group>"; };
+		C3FAA184237B9DEA00D0F38D /* GxPasscodeVariableInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeVariableInputView.h; sourceTree = "<group>"; };
+		C3FAA185237B9DEA00D0F38D /* GxPasscodeButtonLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeButtonLabel.h; sourceTree = "<group>"; };
+		C3FAA186237B9DEA00D0F38D /* GxPasscodeInputField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeInputField.h; sourceTree = "<group>"; };
+		C3FAA187237B9DEA00D0F38D /* GxPasscodeFixedInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeFixedInputView.m; sourceTree = "<group>"; };
+		C3FAA188237B9DEA00D0F38D /* GxPasscodeCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeCircleView.m; sourceTree = "<group>"; };
+		C3FAA189237B9DEA00D0F38D /* GxPasscodeButtonLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeButtonLabel.m; sourceTree = "<group>"; };
+		C3FAA18A237B9DEA00D0F38D /* GxPasscodeVariableInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeVariableInputView.m; sourceTree = "<group>"; };
+		C3FAA18B237B9DEA00D0F38D /* GxPasscodeInputField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeInputField.m; sourceTree = "<group>"; };
+		C3FAA18D237B9DEA00D0F38D /* GxPasscodeKeypadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeKeypadView.h; sourceTree = "<group>"; };
+		C3FAA18E237B9DEA00D0F38D /* GxPasscodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeView.h; sourceTree = "<group>"; };
+		C3FAA18F237B9DEA00D0F38D /* GxPasscodeCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeCircleButton.m; sourceTree = "<group>"; };
+		C3FAA190237B9DEA00D0F38D /* GxPasscodeKeypadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeKeypadView.m; sourceTree = "<group>"; };
+		C3FAA191237B9DEA00D0F38D /* GxPasscodeCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeCircleButton.h; sourceTree = "<group>"; };
+		C3FAA192237B9DEA00D0F38D /* GxPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeView.m; sourceTree = "<group>"; };
+		C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GxPasscodePresentationStrings.h; sourceTree = "<group>"; };
+		C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GxPasscodePresentationStrings.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3FAA14D237B9D0C00D0F38D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3FAA146237B9D0C00D0F38D = {
+			isa = PBXGroup;
+			children = (
+				C3FAA152237B9D0D00D0F38D /* GxPasscodeController */,
+				C3FAA151237B9D0C00D0F38D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3FAA151237B9D0C00D0F38D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA150237B9D0C00D0F38D /* GxPasscodeController.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3FAA152237B9D0D00D0F38D /* GxPasscodeController */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA168237B9DD000D0F38D /* Models */,
+				C3FAA179237B9DEA00D0F38D /* Views */,
+				C3FAA165237B9DAB00D0F38D /* Supporting */,
+				C3FAA15F237B9D9900D0F38D /* GxPasscodeSettingsViewController.h */,
+				C3FAA15B237B9D9900D0F38D /* GxPasscodeSettingsViewController.m */,
+				C3FAA15D237B9D9900D0F38D /* GxPasscodeViewController.h */,
+				C3FAA15E237B9D9900D0F38D /* GxPasscodeViewController.m */,
+				C3FAA153237B9D0D00D0F38D /* GxPasscodeController.h */,
+				C3FAA154237B9D0D00D0F38D /* Info.plist */,
+				C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */,
+				C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */,
+			);
+			path = GxPasscodeController;
+			sourceTree = "<group>";
+		};
+		C3FAA165237B9DAB00D0F38D /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA166237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		C3FAA168237B9DD000D0F38D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA169237B9DD000D0F38D /* GxPasscodeCircleImage.h */,
+				C3FAA16D237B9DD000D0F38D /* GxPasscodeCircleImage.m */,
+				C3FAA16A237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.h */,
+				C3FAA16E237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.m */,
+				C3FAA16B237B9DD000D0F38D /* GxPasscodeViewContentLayout.h */,
+				C3FAA170237B9DD000D0F38D /* GxPasscodeViewContentLayout.m */,
+				C3FAA16C237B9DD000D0F38D /* GxSettingsKeypadImage.h */,
+				C3FAA16F237B9DD000D0F38D /* GxSettingsKeypadImage.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3FAA179237B9DEA00D0F38D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA17A237B9DEA00D0F38D /* Settings */,
+				C3FAA181237B9DEA00D0F38D /* Shared */,
+				C3FAA18C237B9DEA00D0F38D /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C3FAA17A237B9DEA00D0F38D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA17B237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.h */,
+				C3FAA17E237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.m */,
+				C3FAA17C237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.h */,
+				C3FAA17F237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.m */,
+				C3FAA17D237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.h */,
+				C3FAA180237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C3FAA181237B9DEA00D0F38D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA182237B9DEA00D0F38D /* GxPasscodeCircleView.h */,
+				C3FAA188237B9DEA00D0F38D /* GxPasscodeCircleView.m */,
+				C3FAA183237B9DEA00D0F38D /* GxPasscodeFixedInputView.h */,
+				C3FAA187237B9DEA00D0F38D /* GxPasscodeFixedInputView.m */,
+				C3FAA184237B9DEA00D0F38D /* GxPasscodeVariableInputView.h */,
+				C3FAA18A237B9DEA00D0F38D /* GxPasscodeVariableInputView.m */,
+				C3FAA185237B9DEA00D0F38D /* GxPasscodeButtonLabel.h */,
+				C3FAA189237B9DEA00D0F38D /* GxPasscodeButtonLabel.m */,
+				C3FAA186237B9DEA00D0F38D /* GxPasscodeInputField.h */,
+				C3FAA18B237B9DEA00D0F38D /* GxPasscodeInputField.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C3FAA18C237B9DEA00D0F38D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C3FAA18D237B9DEA00D0F38D /* GxPasscodeKeypadView.h */,
+				C3FAA18E237B9DEA00D0F38D /* GxPasscodeView.h */,
+				C3FAA18F237B9DEA00D0F38D /* GxPasscodeCircleButton.m */,
+				C3FAA190237B9DEA00D0F38D /* GxPasscodeKeypadView.m */,
+				C3FAA191237B9DEA00D0F38D /* GxPasscodeCircleButton.h */,
+				C3FAA192237B9DEA00D0F38D /* GxPasscodeView.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C3FAA14B237B9D0C00D0F38D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FAA172237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.h in Headers */,
+				C3FAA164237B9D9900D0F38D /* GxPasscodeSettingsViewController.h in Headers */,
+				C3FAA193237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.h in Headers */,
+				C3FAA19A237B9DEA00D0F38D /* GxPasscodeFixedInputView.h in Headers */,
+				C3FAA155237B9D0D00D0F38D /* GxPasscodeController.h in Headers */,
+				C3FAA173237B9DD000D0F38D /* GxPasscodeViewContentLayout.h in Headers */,
+				C3FAA174237B9DD000D0F38D /* GxSettingsKeypadImage.h in Headers */,
+				C3FAA1A3237B9DEA00D0F38D /* GxPasscodeKeypadView.h in Headers */,
+				C3FAA194237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.h in Headers */,
+				C3FAA195237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.h in Headers */,
+				C3FAA1A4237B9DEA00D0F38D /* GxPasscodeView.h in Headers */,
+				C3FAA171237B9DD000D0F38D /* GxPasscodeCircleImage.h in Headers */,
+				C3FAA1A7237B9DEA00D0F38D /* GxPasscodeCircleButton.h in Headers */,
+				C3FAA19D237B9DEA00D0F38D /* GxPasscodeInputField.h in Headers */,
+				C3FAA199237B9DEA00D0F38D /* GxPasscodeCircleView.h in Headers */,
+				C3FAA167237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h in Headers */,
+				C3FAA162237B9D9900D0F38D /* GxPasscodeViewController.h in Headers */,
+				C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationStrings.h in Headers */,
+				C3FAA19C237B9DEA00D0F38D /* GxPasscodeButtonLabel.h in Headers */,
+				C3FAA19B237B9DEA00D0F38D /* GxPasscodeVariableInputView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C3FAA14F237B9D0C00D0F38D /* GxPasscodeController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3FAA158237B9D0D00D0F38D /* Build configuration list for PBXNativeTarget "GxPasscodeController" */;
+			buildPhases = (
+				C3FAA14B237B9D0C00D0F38D /* Headers */,
+				C3FAA14C237B9D0C00D0F38D /* Sources */,
+				C3FAA14D237B9D0C00D0F38D /* Frameworks */,
+				C3FAA14E237B9D0C00D0F38D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GxPasscodeController;
+			productName = GxPasscodeController;
+			productReference = C3FAA150237B9D0C00D0F38D /* GxPasscodeController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3FAA147237B9D0C00D0F38D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Majid Hatami Aghdam";
+				TargetAttributes = {
+					C3FAA14F237B9D0C00D0F38D = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = C3FAA14A237B9D0C00D0F38D /* Build configuration list for PBXProject "GxPasscodeController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3FAA146237B9D0C00D0F38D;
+			productRefGroup = C3FAA151237B9D0C00D0F38D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3FAA14F237B9D0C00D0F38D /* GxPasscodeController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3FAA14E237B9D0C00D0F38D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3FAA14C237B9D0C00D0F38D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FAA175237B9DD000D0F38D /* GxPasscodeCircleImage.m in Sources */,
+				C3FAA160237B9D9900D0F38D /* GxPasscodeSettingsViewController.m in Sources */,
+				C3FAA177237B9DD000D0F38D /* GxSettingsKeypadImage.m in Sources */,
+				C3FAA19F237B9DEA00D0F38D /* GxPasscodeCircleView.m in Sources */,
+				C3FAA198237B9DEA00D0F38D /* GxPasscodeSettingsKeypadButton.m in Sources */,
+				C3FAA176237B9DD000D0F38D /* GxPasscodeViewControllerAnimatedTransitioning.m in Sources */,
+				C3FAA1A1237B9DEA00D0F38D /* GxPasscodeVariableInputView.m in Sources */,
+				C3FAA163237B9D9900D0F38D /* GxPasscodeViewController.m in Sources */,
+				C3FAA1A5237B9DEA00D0F38D /* GxPasscodeCircleButton.m in Sources */,
+				C3FAA1A2237B9DEA00D0F38D /* GxPasscodeInputField.m in Sources */,
+				C3FAA196237B9DEA00D0F38D /* GxPasscodeSettingsKeypadView.m in Sources */,
+				C3FAA197237B9DEA00D0F38D /* GxPasscodeSettingsWarningLabel.m in Sources */,
+				C3FAA1A8237B9DEA00D0F38D /* GxPasscodeView.m in Sources */,
+				C3FAA178237B9DD000D0F38D /* GxPasscodeViewContentLayout.m in Sources */,
+				C3FAA19E237B9DEA00D0F38D /* GxPasscodeFixedInputView.m in Sources */,
+				C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationStrings.m in Sources */,
+				C3FAA1A0237B9DEA00D0F38D /* GxPasscodeButtonLabel.m in Sources */,
+				C3FAA1A6237B9DEA00D0F38D /* GxPasscodeKeypadView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C3FAA156237B9D0D00D0F38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3FAA157237B9D0D00D0F38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3FAA159237B9D0D00D0F38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2UWEQWNUAW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GxPasscodeController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mygix.GxPasscodeController;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3FAA15A237B9D0D00D0F38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2UWEQWNUAW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GxPasscodeController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mygix.GxPasscodeController;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3FAA14A237B9D0C00D0F38D /* Build configuration list for PBXProject "GxPasscodeController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3FAA156237B9D0D00D0F38D /* Debug */,
+				C3FAA157237B9D0D00D0F38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3FAA158237B9D0D00D0F38D /* Build configuration list for PBXNativeTarget "GxPasscodeController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3FAA159237B9D0D00D0F38D /* Debug */,
+				C3FAA15A237B9D0D00D0F38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3FAA147237B9D0C00D0F38D /* Project object */;
+}
