@@ -532,7 +532,12 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
                       ];
 
     //self.presentationString.
-    NSArray *titles = self.presentationString.setPassCodePage_passwordTypeOptions;
+    NSArray *titles = @[
+                       self.presentationString.setPassCodePage_passwordTypeOptions_fourDigitCode,
+                       self.presentationString.setPassCodePage_passwordTypeOptions_sixDigitCode,
+                       self.presentationString.setPassCodePage_passwordTypeOptions_customNumeric,
+                       self.presentationString.setPassCodePage_passwordTypeOptions_customAlphanumeric
+                       ];
     //@[NSLocalizedString(@"4-Digit Numeric Code", @""),  NSLocalizedString(@"6-Digit Numeric Code", @""),
                         //NSLocalizedString(@"Custom Numeric Code", @""), NSLocalizedString(@"Custom Alphanumeric Code", @"")];
 

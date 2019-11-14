@@ -52,7 +52,7 @@
     
     settingsController.passcodeType = TOPasscodeTypeFourDigits;
     settingsController.delegate = self;
-    settingsController.requireCurrentPasscode = YES;
+    settingsController.requireCurrentPasscode = NO;
     settingsController.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
     //[self.navigationController pushViewController:settingsController animated:YES];
     [self presentViewController:settingsController animated:YES completion:nil];

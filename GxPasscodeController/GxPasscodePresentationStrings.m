@@ -33,10 +33,10 @@
         self.setPassCodePage_DidnotMatch = NSLocalizedString(@"Passcode didn't match.", @"");
         
         self.setPassCodePage_PasscodeOptionsButton = NSLocalizedString(@"Passcode Options", @"");
-        self.setPassCodePage_passwordTypeOptions = @[ NSLocalizedString(@"4-Digit Numeric Code", @""),
-        NSLocalizedString(@"6-Digit Numeric Code", @""),
-        NSLocalizedString(@"Custom Numeric Code", @""),
-        NSLocalizedString(@"Custom Alphanumeric Code", @"")];
+        self.setPassCodePage_passwordTypeOptions_fourDigitCode = NSLocalizedString(@"4-Digit Numeric Code", @"");
+        self.setPassCodePage_passwordTypeOptions_sixDigitCode = NSLocalizedString(@"6-Digit Numeric Code", @"");
+        self.setPassCodePage_passwordTypeOptions_customNumeric = NSLocalizedString(@"Custom Numeric Code", @"");
+        self.setPassCodePage_passwordTypeOptions_customAlphanumeric = NSLocalizedString(@"Custom Alphanumeric Code", @"");
         
         self.setPassCodePage_FailedPassCodeAttempts = NSLocalizedString(@"%d Failed Passcode Attempts !!!", @"");
     }

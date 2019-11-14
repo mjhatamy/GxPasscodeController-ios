@@ -26,8 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* setPassCodePage_ConfirmNewPasscode;
 @property (nonatomic, strong) NSString* setPassCodePage_EnterCurrentPasscodeTitle;
 @property (nonatomic, strong) NSString* setPassCodePage_DidnotMatch;
-    
-@property (nonatomic, strong) NSArray*  setPassCodePage_passwordTypeOptions;
+
+@property (nonatomic, strong) NSString*  setPassCodePage_passwordTypeOptions_sixDigitCode;
+@property (nonatomic, strong) NSString*  setPassCodePage_passwordTypeOptions_fourDigitCode;
+@property (nonatomic, strong) NSString*  setPassCodePage_passwordTypeOptions_customNumeric;
+@property (nonatomic, strong) NSString*  setPassCodePage_passwordTypeOptions_customAlphanumeric;
+
 @property (nonatomic, strong) NSString* setPassCodePage_PasscodeOptionsButton; // NSLocalizedString(@"Passcode Options", @"")
 @property (nonatomic, strong) NSString* setPassCodePage_FailedPassCodeAttempts;
 
