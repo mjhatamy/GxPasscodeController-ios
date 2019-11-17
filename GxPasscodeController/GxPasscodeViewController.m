@@ -42,6 +42,7 @@
 //@property (nonatomic, readonly) TOPasscodeView *passcodeView;
 @property (nonatomic, strong, readwrite) UIVisualEffectView *backgroundEffectView;
 @property (nonatomic, strong, readwrite) UIView *backgroundView;
+@property (nonatomic, strong, readwrite) UIImageView *logoImageView;
 @property (nonatomic, strong, readwrite) GxPasscodeView *passcodeView;
 @property (nonatomic, strong, readwrite) UIButton *biometricButton;
 @property (nonatomic, strong, readwrite) UIButton *cancelButton;
@@ -56,6 +57,7 @@
 - (instancetype)initWithType:(GxPasscodeType)type presentationString:(GxPasscodePresentationStrings *)presentationStrings
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
+        
         _presentationStrings = presentationStrings;
         _passcodeType = type;
         
@@ -78,6 +80,7 @@
             _presentationStrings. dialpad_letteredTitles = @[@"ABC", @"DEF", @"GHI", @"JKL", @"MNO", @"PQRS", @"TUV", @"WXYZ"];
         }
         
+        self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
         [self setUp];
     }
 
@@ -106,6 +109,10 @@
     self.automaticallyPromptForBiometricValidation = NO;
     self.allowCancel = YES;
 
+    _logoImageView = [[UIImageView alloc] init];
+    [_logoImageView setContentMode: UIViewContentModeScaleAspectFit];
+    [_logoImageView setClipsToBounds:TRUE];
+    [self.view addSubview:_logoImageView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:)
                                                      name:UIKeyboardWillChangeFrameNotification object:nil];
 }
@@ -138,7 +145,7 @@
         self.biometricButton = [UIButton buttonWithType:UIButtonTypeSystem];
         
         switch (self.biometryType) {
-            case TOPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
+            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
             default: [self.biometricButton setTitle: self.presentationStrings.touchIdButtonTitle forState:UIControlStateNormal];
         }
         
@@ -183,6 +190,10 @@
     [self updateAccessoryButtonFontsForSize:self.view.bounds.size];
 }
 
+- (void) setLogoImage:(nullable UIImage *) image {
+    _logoImageView.image = image;
+}
+
 #pragma mark - View Management -
 - (void)viewDidLoad
 {
@@ -195,13 +206,20 @@
     [self applyTheme];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     // Automatically trigger biometric validation if available
     if (self.allowBiometricValidation && self.automaticallyPromptForBiometricValidation) {
         [self accessoryButtonTapped:self.biometricButton];
+    }
+    
+    // Show the keyboard if we're entering alphanumeric characters
+    if (self.passcodeType == GxPasscodeTypeCustomAlphanumeric) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            //[self.passcodeView.inputField setEnabled:TRUE];
+            [self.passcodeView.inputField becomeFirstResponder];
+        });
     }
 }
 
@@ -238,6 +256,11 @@
 
     // Re-layout the accessory buttons
     [self layoutAccessoryButtonsForSize:maxSize];
+    
+    CGFloat mid = (self.view.frame.size.width / 2.0) - (32);
+    CGFloat safeAreaTop = self.view.safeAreaInsets.top;
+    _logoImageView.frame = CGRectMake(mid, safeAreaTop + 24, 64, 64);
+    [_logoImageView.layer setCornerRadius:8];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -252,10 +275,7 @@
         [self.view layoutIfNeeded];
     }];
 
-    // Show the keyboard if we're entering alphanumeric characters
-    if (self.passcodeType == TOPasscodeTypeCustomAlphanumeric) {
-        [self.passcodeView.inputField becomeFirstResponder];
-    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -274,7 +294,7 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
     // We don't need to do anything special on iPad or if we're using character input
-    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad || self.passcodeType == TOPasscodeTypeCustomAlphanumeric) { return; }
+    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad || self.passcodeType == GxPasscodeTypeCustomAlphanumeric) { return; }
 
     // Work out if we need to transition to horizontal
     BOOL horizontalLayout = size.height < size.width;
@@ -308,10 +328,10 @@
     }
 
     CGFloat pointSize = 17.0f;
-    if (width < TOPasscodeViewContentSizeMedium) {
+    if (width < GxPasscodeViewContentSizeMedium) {
         pointSize = 14.0f;
     }
-    else if (width < TOPasscodeViewContentSizeDefault) {
+    else if (width < GxPasscodeViewContentSizeDefault) {
         pointSize = 16.0f;
     }
 
@@ -328,10 +348,10 @@
     CGFloat width = MIN(size.width, size.height);
 
     CGFloat verticalInset = 54.0f;
-    if (width < TOPasscodeViewContentSizeMedium) {
+    if (width < GxPasscodeViewContentSizeMedium) {
         verticalInset = 37.0f;
     }
-    else if (width < TOPasscodeViewContentSizeDefault) {
+    else if (width < GxPasscodeViewContentSizeDefault) {
         verticalInset = 43.0f;
     }
 
@@ -363,10 +383,10 @@
     CGFloat buttonInset = self.passcodeView.keypadButtonInset;
     CGFloat width = MIN(size.width, size.height);
     CGFloat verticalInset = 35.0f;
-    if (width < TOPasscodeViewContentSizeMedium) {
+    if (width < GxPasscodeViewContentSizeMedium) {
         verticalInset = 30.0f;
     }
-    else if (width < TOPasscodeViewContentSizeDefault) {
+    else if (width < GxPasscodeViewContentSizeDefault) {
         verticalInset = 35.0f;
     }
 
@@ -395,7 +415,7 @@
     // The buttons are always embedded in the keypad view on iPad
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) { return; }
 
-    if (self.passcodeView.horizontalLayout && self.passcodeType != TOPasscodeTypeCustomAlphanumeric) {
+    if (self.passcodeView.horizontalLayout && self.passcodeType != GxPasscodeTypeCustomAlphanumeric) {
         [self horizontalLayoutAccessoryButtonsForSize:size];
     }
     else {
@@ -408,7 +428,7 @@
 {
     if (sender == self.cancelButton) {
         // When entering keyboard input, just leave the button as 'cancel'
-        if (self.passcodeType != TOPasscodeTypeCustomAlphanumeric && self.passcodeView.passcode.length > 0) {
+        if (self.passcodeType != GxPasscodeTypeCustomAlphanumeric && self.passcodeView.passcode.length > 0) {
             [self.passcodeView deleteLastPasscodeCharacterAnimated:YES];
             [self keypadButtonTapped];
             return;
@@ -542,7 +562,7 @@
     };
 
     // Set initial layout to horizontal if we're rotated on an iPhone
-    if (self.passcodeType != TOPasscodeTypeCustomAlphanumeric && UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad) {
+    if (self.passcodeType != GxPasscodeTypeCustomAlphanumeric && UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad) {
         CGSize boundsSize = self.view.bounds.size;
         _passcodeView.horizontalLayout = boundsSize.width > boundsSize.height;
     }
@@ -622,7 +642,7 @@
     
     if (_biometryType) {
         switch (_biometryType) {
-            case TOPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
+            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
             default: [self.biometricButton setTitle: self.presentationStrings.touchIdButtonTitle forState:UIControlStateNormal];
         }
     }

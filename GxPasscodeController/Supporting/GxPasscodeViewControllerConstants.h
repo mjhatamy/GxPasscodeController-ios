@@ -23,10 +23,10 @@
 
 /* The visual style of the asscode view controller */
 typedef NS_ENUM(NSInteger, GxPasscodeViewStyle) {
-    TOPasscodeViewStyleTranslucentDark,
-    TOPasscodeViewStyleTranslucentLight,
-    TOPasscodeViewStyleOpaqueDark,
-    TOPasscodeViewStyleOpaqueLight
+    GxPasscodeViewStyleTranslucentDark,
+    GxPasscodeViewStyleTranslucentLight,
+    GxPasscodeViewStyleOpaqueDark,
+    GxPasscodeViewStyleOpaqueLight
 };
 
 /* The visual style of the passcode settings view controller. */
@@ -37,22 +37,22 @@ typedef NS_ENUM(NSInteger, GxPasscodeSettingsViewStyle) {
 
 /* Depending on the amount of horizontal space, the sizing of the elements */
 typedef NS_ENUM(NSInteger, GxPasscodeViewContentSize) {
-    TOPasscodeViewContentSizeDefault = 414, // Default, 414 points and above (6 Plus, all remaining iPad sizes)
-    TOPasscodeViewContentSizeMedium = 375, // Greater or equal to 375 points: iPhone 6 / iPad Pro 1/4 split mode
-    TOPasscodeViewContentSizeSmall  = 320  // Greater or equal to 320 points: iPhone SE / iPad 1/4 split mode
+    GxPasscodeViewContentSizeDefault = 414, // Default, 414 points and above (6 Plus, all remaining iPad sizes)
+    GxPasscodeViewContentSizeMedium = 375, // Greater or equal to 375 points: iPhone 6 / iPad Pro 1/4 split mode
+    GxPasscodeViewContentSizeSmall  = 320  // Greater or equal to 320 points: iPhone SE / iPad 1/4 split mode
 };
 
 /* The types of passcodes that may be used. */
 typedef NS_ENUM(NSInteger, GxPasscodeType) {
-    TOPasscodeTypeFourDigits,           // 4 Numbers
-    TOPasscodeTypeSixDigits,            // 6 Numbers
-    TOPasscodeTypeCustomNumeric,        // Any length of numbers
-    TOPasscodeTypeCustomAlphanumeric    // Any length of characters
+    GxPasscodeTypeFourDigits,           // 4 Numbers
+    GxPasscodeTypeSixDigits,            // 6 Numbers
+    GxPasscodeTypeCustomNumeric,        // Any length of numbers
+    GxPasscodeTypeCustomAlphanumeric    // Any length of characters
 };
 
 /* The type of biometrics this controller can handle */
 typedef NS_ENUM(NSInteger, GxPasscodeBiometryType) {
-    TOPasscodeBiometryTypeTouchID,
-    TOPasscodeBiometryTypeFaceID
+    GxPasscodeBiometryTypeTouchID,
+    GxPasscodeBiometryTypeFaceID
 };
 

@@ -40,8 +40,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol GxPasscodeSettingsViewControllerDelegate <NSObject>
 
-@optional
-
 /** Called when the user was prompted to input their current passcode.
  Return YES if passcode was right and NO otherwise.
 

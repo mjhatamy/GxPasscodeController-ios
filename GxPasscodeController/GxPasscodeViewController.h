@@ -37,8 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol GxPasscodeViewControllerDelegate <NSObject>
 
-@optional
-
 /** 
  Return YES if the user entered the expected PIN code. Return NO if it was incorrect.
  (For security reasons, it is safer to fetch the saved PIN code only when this method is called, and
@@ -58,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)didPerformBiometricValidationRequestInPasscodeViewController:(GxPasscodeViewController *)passcodeViewController;
 
+
+@optional
 /** Called when the pin view was resized as a result of the view controller being resized.
     You can use this to resize your custom header view if necessary.
  */
@@ -154,6 +154,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param animated The content will play a crossfade animation.
  */
 - (void)setContentHidden:(BOOL)hidden animated:(BOOL)animated;
+
+
+- (void) setLogoImage:(nullable UIImage *) image;
 
 @end
 

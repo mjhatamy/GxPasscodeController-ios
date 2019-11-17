@@ -68,6 +68,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
         if(_presentationString.setPassCodePage_PasscodeOptionsButton == NULL){
             _presentationString.setPassCodePage_PasscodeOptionsButton = self.presentationString.setPassCodePage_PasscodeOptionsButton;
         }
+        self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
         [self setUp];
     }
 
@@ -214,7 +215,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 
 - (void)updateContentForState:(GxPasscodeSettingsViewState)state type:(GxPasscodeType)type animated:(BOOL)animated
 {
-    BOOL variableSizePasscode = (type >= TOPasscodeTypeCustomNumeric);
+    BOOL variableSizePasscode = (type >= GxPasscodeTypeCustomNumeric);
 
     // Update the visibility of the options button
     self.optionsButton.hidden = !(state == TOPasscodeSettingsViewStateEnterNewPasscode);
@@ -231,7 +232,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
     // Change the input view if needed
     if (!variableSizePasscode) {
         self.inputField.style = TOPasscodeInputFieldStyleFixed;
-        self.inputField.fixedInputView.length = (self.passcodeType == TOPasscodeTypeSixDigits) ? 6 : 4;
+        self.inputField.fixedInputView.length = (self.passcodeType == GxPasscodeTypeSixDigits) ? 6 : 4;
     }
     else {
         self.inputField.style = TOPasscodeInputFieldStyleVariable;
@@ -287,7 +288,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
     self.inputField.frame = CGRectIntegral(frame);
 
     // If we're the alphanumeric type, present the keyboard
-    if (type == TOPasscodeTypeCustomAlphanumeric) {
+    if (type == GxPasscodeTypeCustomAlphanumeric) {
         self.inputField.enabled = YES;
         [self.inputField becomeFirstResponder];
     }
@@ -389,7 +390,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
     frame.size.height = MIN(frame.size.height, kTOPasscodeKeypadMaxHeight);
     frame.size.width = viewSize.width;
     frame.origin.y = viewSize.height;
-    if (self.passcodeType != TOPasscodeTypeCustomAlphanumeric) {
+    if (self.passcodeType != GxPasscodeTypeCustomAlphanumeric) {
         frame.origin.y -= frame.size.height;
     }
 
@@ -500,7 +501,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 
 - (CGRect)contentOverlapFrame
 {
-    if (self.passcodeType < TOPasscodeTypeCustomAlphanumeric) {
+    if (self.passcodeType < GxPasscodeTypeCustomAlphanumeric) {
         return self.keypadView.frame;
     }
 
@@ -525,10 +526,10 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 
     __weak typeof(self) weakSelf = self;
 
-    NSArray *types = @[@(TOPasscodeTypeFourDigits),
-                       @(TOPasscodeTypeSixDigits),
-                       @(TOPasscodeTypeCustomNumeric),
-                       @(TOPasscodeTypeCustomAlphanumeric)
+    NSArray *types = @[@(GxPasscodeTypeFourDigits),
+                       @(GxPasscodeTypeSixDigits),
+                       @(GxPasscodeTypeCustomNumeric),
+                       @(GxPasscodeTypeCustomAlphanumeric)
                       ];
 
     //self.presentationString.

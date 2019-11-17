@@ -313,7 +313,7 @@
 
 - (void)sizeToFit
 {
-    if (self.horizontalLayout && self.passcodeType != TOPasscodeTypeCustomAlphanumeric) {
+    if (self.horizontalLayout && self.passcodeType != GxPasscodeTypeCustomAlphanumeric) {
         [self horizontalSizeToFit];
     }
     else {
@@ -340,7 +340,7 @@
 
     // Set up the passcode style
     TOPasscodeInputFieldStyle style = TOPasscodeInputFieldStyleFixed;
-    if (type >= TOPasscodeTypeCustomNumeric) {
+    if (type >= GxPasscodeTypeCustomNumeric) {
         style = TOPasscodeInputFieldStyleVariable;
     }
 
@@ -356,17 +356,17 @@
 
     // Configure the input field based on the exact passcode type
     if (style == TOPasscodeInputFieldStyleFixed) {
-        self.inputField.fixedInputView.length = (self.passcodeType == TOPasscodeTypeSixDigits) ? 6 : 4;
+        self.inputField.fixedInputView.length = (self.passcodeType == GxPasscodeTypeSixDigits) ? 6 : 4;
     }
     else {
-        self.inputField.showSubmitButton = (self.passcodeType == TOPasscodeTypeCustomNumeric);
-        self.inputField.enabled = (self.passcodeType == TOPasscodeTypeCustomAlphanumeric);
+        self.inputField.showSubmitButton = (self.passcodeType == GxPasscodeTypeCustomNumeric);
+        self.inputField.enabled = (self.passcodeType == GxPasscodeTypeCustomAlphanumeric);
     }
 
     [self addSubview:self.inputField];
 
     // Set up pad row
-    if (type != TOPasscodeTypeCustomAlphanumeric) {
+    if (type != GxPasscodeTypeCustomAlphanumeric) {
         if (self.keypadView == nil) {
             self.keypadView = [[GxPasscodeKeypadView alloc] init:(self.presentationStrings)];
         }
@@ -396,7 +396,7 @@
     self.inputField.fixedInputView.circleSpacing = contentLayout.circleRowSpacing;
 
     // Text Field Input Row
-    NSInteger maximumInputLength = (self.passcodeType == TOPasscodeTypeCustomAlphanumeric) ?
+    NSInteger maximumInputLength = (self.passcodeType == GxPasscodeTypeCustomAlphanumeric) ?
                                             contentLayout.textFieldAlphanumericCharacterLength :
                                             contentLayout.textFieldNumericCharacterLength;
 

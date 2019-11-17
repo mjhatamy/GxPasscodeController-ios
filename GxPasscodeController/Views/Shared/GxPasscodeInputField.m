@@ -180,7 +180,8 @@
 }
 
 #pragma mark - Text Input Protocol -
-- (BOOL)canBecomeFirstResponder { return self.enabled; }
+- (BOOL)canBecomeFirstResponder {
+    return self.enabled; }
 
 - (BOOL)hasText { return self.passcode.length > 0; }
 
