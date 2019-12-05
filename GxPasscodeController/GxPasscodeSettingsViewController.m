@@ -53,7 +53,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 /* Bar Items */
 @property (nonatomic, strong) UIBarButtonItem *nextBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
-@property (nonatomic, readonly) GxPasscodePresentationStrings *presentationString;
+@property (nonatomic, readonly) GxPasscodePresentationData *presentationString;
 
 @end
 
@@ -61,7 +61,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 
 #pragma mark - Object Creation -
 
-- (instancetype)initWithPresentationString:(GxPasscodePresentationStrings *)presentationString
+- (instancetype)initWithPresentationString:(GxPasscodePresentationData *)presentationString
 {
     if (self = [self initWithNibName:nil bundle:nil]) {
         _presentationString = presentationString;
@@ -100,7 +100,7 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set background color
-    self.view.backgroundColor = UIColor.systemBackgroundColor;
+    self.view.backgroundColor = self.presentationString.backgroundColor;
 
     __weak typeof(self) weakSelf = self;
 
@@ -159,8 +159,10 @@ const CGFloat kTOPasscodeKeypadMaxHeight = 330.0f;
     // Create Options button
   
     self.optionsButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.optionsButton.tintColor = self.presentationString.setPassCodePage_PasscodeOptionsButtonTintColor;
+    [self.optionsButton setTitleColor:self.presentationString.setPassCodePage_PasscodeOptionsButtonTintColor forState:UIControlStateNormal];
     [self.optionsButton setTitle:self.presentationString.setPassCodePage_PasscodeOptionsButton forState:UIControlStateNormal];
-    self.optionsButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.optionsButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
     [self.optionsButton sizeToFit];
     [self.optionsButton addTarget:self action:@selector(optionsCodeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.optionsButton];

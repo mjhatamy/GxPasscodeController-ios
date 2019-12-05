@@ -6,14 +6,18 @@
 //  Copyright © 2019 Majid Hatami Aghdam. All rights reserved.
 //
 
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 
-@implementation GxPasscodePresentationStrings
+@implementation GxPasscodePresentationData
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        self.backgroundColor = [UIColor blackColor];
+        self.keypadButtonHighlightedTextColor = [UIColor blackColor];
+        self.setPassCodePage_PasscodeOptionsButtonTintColor = UIColor.labelColor;
+        
         self.cancelButtonTitle = NSLocalizedString(@"Cancel", @"");
         self.deleteButtonTitle = NSLocalizedString(@"Delete", @"");
         self.faceIdButtonTitle = NSLocalizedString(@"Face ID", @"");
@@ -42,4 +46,10 @@
     }
     return self;
 }
+
+-(void) setBackgroundColor:(UIColor *)backgroundColor{
+    _backgroundColor = backgroundColor;
+    _keypadButtonHighlightedTextColor = backgroundColor;
+}
+
 @end

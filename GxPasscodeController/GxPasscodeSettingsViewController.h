@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GxPasscodeViewControllerConstants.h"
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 
 @class GxPasscodeSettingsViewController;
 
@@ -93,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param style The visual style of the view controller
  */
-- (instancetype)initWithPresentationString:(GxPasscodePresentationStrings *)presentationString ;
+- (instancetype)initWithPresentationString:(GxPasscodePresentationData *)presentationString ;
 
 /*
  Changes the passcode type and animates if required

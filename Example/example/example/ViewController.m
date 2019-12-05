@@ -22,23 +22,25 @@
 }
 - (IBAction)onCodeViewPressed:(UIButton *)sender {
     
-    GxPasscodePresentationStrings *presentationString = [[GxPasscodePresentationStrings alloc] init];
+    GxPasscodePresentationData *presentationString = [[GxPasscodePresentationData alloc] init];
     presentationString.enterPasscodeViewTitle = @"Enter PASS";
     presentationString. dialpad_letteredTitles = @[@"ABC", @"DEF", @"GHI", @"JKL", @"MNO", @"PQRS", @"TUV", @"WXYZ"];
     presentationString.setPassCodePage_FailedPassCodeAttempts = NSLocalizedString(@"%d Failed Passcode Attempts !!!", @"");
     
-    GxPasscodeViewController *passcodeViewController = [[GxPasscodeViewController alloc] initWithType:TOPasscodeTypeFourDigits presentationString:presentationString];
+    
+    GxPasscodeViewController *passcodeViewController = [[GxPasscodeViewController alloc] initWithType:GxPasscodeTypeFourDigits presentationString:presentationString];
     passcodeViewController.delegate = self;
     passcodeViewController.allowCancel = false;
     passcodeViewController.allowBiometricValidation = false; //self.biometricsAvailable;
+    [passcodeViewController setLogoImage:[UIImage imageNamed:@"app_logo_80x85_white"]];
     //passcodeViewController.biometryType = self.faceIDAvailable ? TOPasscodeBiometryTypeFaceID : TOPasscodeBiometryTypeTouchID;
     //passcodeViewController.keypadButtonShowLettering = self.showButtonLettering;
     
-    passcodeViewController.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    passcodeViewController.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
     [self presentViewController:passcodeViewController animated:YES completion:nil];
 }
 - (IBAction)onSettingBtnPressed:(UIButton *)sender {
-    GxPasscodePresentationStrings *presentationString = [[GxPasscodePresentationStrings alloc] init];
+    GxPasscodePresentationData *presentationString = [[GxPasscodePresentationData alloc] init];
     presentationString.cancelButtonTitle = @"Cancel";
     presentationString.enterPasscodeViewTitle = @"Enter PASS";
     presentationString.dialpad_letteredTitles = @[@"ABC", @"DEF", @"GHI", @"JKL", @"MNO", @"PQRS", @"TUV", @"WXYZ"];
@@ -50,7 +52,7 @@
     presentationString.setPassCodePage_FailedPassCodeAttempts = NSLocalizedString(@"%d Failed Passcode Attempts !!!", @"");
     GxPasscodeSettingsViewController *settingsController = [[GxPasscodeSettingsViewController alloc] initWithPresentationString: presentationString];
     
-    settingsController.passcodeType = TOPasscodeTypeFourDigits;
+    settingsController.passcodeType = GxPasscodeTypeFourDigits;
     settingsController.delegate = self;
     settingsController.requireCurrentPasscode = NO;
     settingsController.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;

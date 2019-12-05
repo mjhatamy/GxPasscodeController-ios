@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GxPasscodePresentationStrings : NSObject
+@interface GxPasscodePresentationData : NSObject
+
+@property (nonatomic, strong) UIColor* backgroundColor;
+@property (nonatomic, strong) UIColor* keypadButtonHighlightedTextColor;
 
 @property (nonatomic, strong) NSString* deleteButtonTitle;
 @property (nonatomic, strong) NSString* cancelButtonTitle;
@@ -33,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString*  setPassCodePage_passwordTypeOptions_customAlphanumeric;
 
 @property (nonatomic, strong) NSString* setPassCodePage_PasscodeOptionsButton; // NSLocalizedString(@"Passcode Options", @"")
+@property (nonatomic, strong) UIColor*  setPassCodePage_PasscodeOptionsButtonTintColor;
 @property (nonatomic, strong) NSString* setPassCodePage_FailedPassCodeAttempts;
 
 @end

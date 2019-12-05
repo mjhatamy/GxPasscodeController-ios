@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GxPasscodeViewControllerConstants.h"
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -94,7 +94,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param style The visual style of the passcode view.
  @param type The type of passcode to accept.
  */
-- (instancetype)initWithPasscodeType:(GxPasscodeType)type presentationString:(GxPasscodePresentationStrings *)presentationStrings NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithPasscodeType:(GxPasscodeType)type presentationString:(GxPasscodePresentationData *)presentationData NS_DESIGNATED_INITIALIZER;
 
 /*
  Resize the view and all subviews for the optimum size to fit a super view of the suplied width.

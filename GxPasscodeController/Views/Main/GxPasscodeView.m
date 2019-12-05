@@ -39,7 +39,7 @@
 
 /* The type of passcode we're displaying */
 @property (nonatomic, assign, readwrite) GxPasscodeType passcodeType;
-@property (nonatomic, readwrite) GxPasscodePresentationStrings *presentationStrings;
+@property (nonatomic, readwrite) GxPasscodePresentationData *presentationData;
 
 @end
 
@@ -54,10 +54,10 @@
     return self;
 }
 
-- (instancetype)initWithPasscodeType:(GxPasscodeType)type presentationString:(GxPasscodePresentationStrings *)presentationStrings
+- (instancetype)initWithPasscodeType:(GxPasscodeType)type presentationString:(GxPasscodePresentationData *)presentationData
 {
     if (self = [super initWithFrame:CGRectMake(0,0,320,393)]) {
-        _presentationStrings = presentationStrings;
+        _presentationData = presentationData;
         _passcodeType = type;
         [self setUp];
     }
@@ -83,7 +83,7 @@
     _currentLayout = _defaultContentLayout;
     _contentLayouts = @[[GxPasscodeViewContentLayout mediumScreenContentLayout],
                         [GxPasscodeViewContentLayout smallScreenContentLayout]];
-    _titleText = self.presentationStrings.enterPasscodeViewTitle;
+    _titleText = self.presentationData.enterPasscodeViewTitle;
     //NSLocalizedString(@"Enter Passcode", @"");
 
     // Start configuring views
@@ -368,7 +368,7 @@
     // Set up pad row
     if (type != GxPasscodeTypeCustomAlphanumeric) {
         if (self.keypadView == nil) {
-            self.keypadView = [[GxPasscodeKeypadView alloc] init:(self.presentationStrings)];
+            self.keypadView = [[GxPasscodeKeypadView alloc] init:(self.presentationData)];
         }
         self.keypadView.buttonTappedHandler = ^(NSInteger button) {
             NSString *numberString = [NSString stringWithFormat:@"%ld", (long)button];
@@ -430,15 +430,15 @@
     self.titleLabel.textColor = titleLabelColor;
 
     // Add/remove the translucency effect to the buttons
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterialDark];
     UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
-    self.inputField.visualEffectView.effect = vibrancyEffect;
-    self.keypadView.vibrancyEffect = vibrancyEffect;
+    //self.inputField.visualEffectView.effect = vibrancyEffect;
+    //self.keypadView.vibrancyEffect = vibrancyEffect;
 
     // Set keyboard style of the input field
     //self.inputField.keyboardAppearance = isDark ? UIKeyboardAppearanceDark : UIKeyboardAppearanceDefault;
 
-    UIColor *defaultTintColor = UIColor.secondaryLabelColor;
+    UIColor *defaultTintColor = UIColor.labelColor;
     
     // Set the tint color of the circle row view
     UIColor *circleRowColor = self.inputProgressViewTintColor;
@@ -462,8 +462,11 @@
     self.keypadView.buttonTextColor = buttonTextColor;
 
     // Set the highlight color of the keypad button
-    //UIColor *buttonHighlightedTextColor = self.keypadButtonHighlightedTextColor;
-    //self.keypadView.buttonHighlightedTextColor = buttonHighlightedTextColor;
+    if(!self.keypadButtonHighlightedTextColor) {
+        self.keypadButtonHighlightedTextColor = self.presentationData.keypadButtonHighlightedTextColor;
+    }
+    UIColor *buttonHighlightedTextColor = self.keypadButtonHighlightedTextColor;
+    self.keypadView.buttonHighlightedTextColor = buttonHighlightedTextColor;
 }
 
 #pragma mark - Passcode Management -

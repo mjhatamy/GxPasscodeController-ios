@@ -46,7 +46,7 @@
 @property (nonatomic, strong, readwrite) GxPasscodeView *passcodeView;
 @property (nonatomic, strong, readwrite) UIButton *biometricButton;
 @property (nonatomic, strong, readwrite) UIButton *cancelButton;
-@property (nonatomic, readwrite) GxPasscodePresentationStrings *presentationStrings;
+@property (nonatomic, readwrite) GxPasscodePresentationData *presentationData;
 
 @end
 
@@ -54,30 +54,31 @@
 
 #pragma mark - Instance Creation -
 
-- (instancetype)initWithType:(GxPasscodeType)type presentationString:(GxPasscodePresentationStrings *)presentationStrings
+- (instancetype)initWithType:(GxPasscodeType)type presentationString:(GxPasscodePresentationData *)presentationStrings
 {
     if (self = [super initWithNibName:nil bundle:nil]) {
         
-        _presentationStrings = presentationStrings;
+        _presentationData = presentationStrings;
         _passcodeType = type;
         
+        _allowCancel = YES;
         /// Fix Missing Values:
-        if(_presentationStrings.enterPasscodeViewTitle == NULL){
-            _presentationStrings.enterPasscodeViewTitle = NSLocalizedString(@"Enter passcode", @"Enter passcode");
+        if(_presentationData.enterPasscodeViewTitle == NULL){
+            _presentationData.enterPasscodeViewTitle = NSLocalizedString(@"Enter passcode", @"Enter passcode");
         }
-        if(_presentationStrings.cancelButtonTitle == NULL){
-            _presentationStrings.cancelButtonTitle = NSLocalizedString(@"Cancel", @"Cancel");
+        if(_presentationData.cancelButtonTitle == NULL){
+            _presentationData.cancelButtonTitle = NSLocalizedString(@"Cancel", @"Cancel");
         }
-        if(_presentationStrings.deleteButtonTitle == NULL){
-            _presentationStrings.deleteButtonTitle = NSLocalizedString(@"Delete", @"Delete");
-        }
-        
-        if(_presentationStrings.faceIdButtonTitle == NULL){
-            _presentationStrings.faceIdButtonTitle = NSLocalizedString(@"Face ID", @"Face ID");
+        if(_presentationData.deleteButtonTitle == NULL){
+            _presentationData.deleteButtonTitle = NSLocalizedString(@"Delete", @"Delete");
         }
         
-        if(_presentationStrings. dialpad_letteredTitles == NULL){
-            _presentationStrings. dialpad_letteredTitles = @[@"ABC", @"DEF", @"GHI", @"JKL", @"MNO", @"PQRS", @"TUV", @"WXYZ"];
+        if(_presentationData.faceIdButtonTitle == NULL){
+            _presentationData.faceIdButtonTitle = NSLocalizedString(@"Face ID", @"Face ID");
+        }
+        
+        if(_presentationData. dialpad_letteredTitles == NULL){
+            _presentationData. dialpad_letteredTitles = @[@"ABC", @"DEF", @"GHI", @"JKL", @"MNO", @"PQRS", @"TUV", @"WXYZ"];
         }
         
         self.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
@@ -107,7 +108,6 @@
 {
     self.transitioningDelegate = self;
     self.automaticallyPromptForBiometricValidation = NO;
-    self.allowCancel = YES;
 
     _logoImageView = [[UIImageView alloc] init];
     [_logoImageView setContentMode: UIViewContentModeScaleAspectFit];
@@ -115,6 +115,11 @@
     [self.view addSubview:_logoImageView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:)
                                                      name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void)setAllowCancel:(BOOL)allowCancel {
+    _allowCancel = allowCancel;
+    self.cancelButton.hidden = !allowCancel;
 }
 
 - (void)setUpBackgroundEffectView
@@ -131,7 +136,7 @@
 {
     self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view insertSubview:self.backgroundView atIndex:0];
+    //[self.view insertSubview:self.backgroundView atIndex:0];
 }
 
 
@@ -145,8 +150,8 @@
         self.biometricButton = [UIButton buttonWithType:UIButtonTypeSystem];
         
         switch (self.biometryType) {
-            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
-            default: [self.biometricButton setTitle: self.presentationStrings.touchIdButtonTitle forState:UIControlStateNormal];
+            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationData.faceIdButtonTitle forState:UIControlStateNormal];
+            default: [self.biometricButton setTitle: self.presentationData.touchIdButtonTitle forState:UIControlStateNormal];
         }
         
         [self.biometricButton addTarget:self action:@selector(accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -167,7 +172,7 @@
 
     if (!self.rightAccessoryButton && !self.cancelButton) {
         self.cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        [self.cancelButton setTitle:self.presentationStrings.cancelButtonTitle forState:UIControlStateNormal];
+        [self.cancelButton setTitle:self.presentationData.cancelButtonTitle forState:UIControlStateNormal];
         self.cancelButton.titleLabel.font = buttonFont;
         [self.cancelButton addTarget:self action:@selector(accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         // If cancelling is disabled, we hide the cancel button but we still create it, because it can
@@ -198,7 +203,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.systemGroupedBackgroundColor;
+    self.view.backgroundColor = self.presentationData.backgroundColor;
     self.view.layer.allowsGroupOpacity = NO;
     [self setUpBackgroundEffectView];
     [self setUpBackgroundView];
@@ -257,9 +262,19 @@
     // Re-layout the accessory buttons
     [self layoutAccessoryButtonsForSize:maxSize];
     
-    CGFloat mid = (self.view.frame.size.width / 2.0) - (32);
+    CGFloat mid = (self.view.frame.size.width / 2.0);
     CGFloat safeAreaTop = self.view.safeAreaInsets.top;
-    _logoImageView.frame = CGRectMake(mid, safeAreaTop + 24, 64, 64);
+    CGRect logoFrame = CGRectZero;
+    logoFrame.origin.x = mid;
+    logoFrame.origin.y = safeAreaTop + 16;
+    logoFrame.size.height = frame.origin.y - logoFrame.origin.y;
+    if(logoFrame.size.height > 64){
+        logoFrame.size.height = 64;
+    }
+    logoFrame.size.width = logoFrame.size.height;
+    logoFrame.origin.x -= logoFrame.size.width / 2.0f;
+    
+    _logoImageView.frame = logoFrame;
     [_logoImageView.layer setCornerRadius:8];
 }
 
@@ -449,10 +464,10 @@
 {
     NSString *title = nil;
     if (self.passcodeView.passcode.length > 0) {
-        title = self.presentationStrings.deleteButtonTitle;
+        title = self.presentationData.deleteButtonTitle;
         //NSLocalizedString(@"Delete", @"Delete");
     } else if (self.allowCancel) {
-        title = self.presentationStrings.cancelButtonTitle;
+        title = self.presentationData.cancelButtonTitle;
         //NSLocalizedString(@"Cancel", @"Cancel");
     }
     
@@ -545,7 +560,7 @@
 {
     if (_passcodeView) { return _passcodeView; }
 
-    _passcodeView = [[GxPasscodeView alloc] initWithPasscodeType:self.passcodeType presentationString: _presentationStrings ];
+    _passcodeView = [[GxPasscodeView alloc] initWithPasscodeType:self.passcodeType presentationString: _presentationData ];
     _passcodeView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
                                     UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [_passcodeView sizeToFit];
@@ -642,8 +657,8 @@
     
     if (_biometryType) {
         switch (_biometryType) {
-            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationStrings.faceIdButtonTitle forState:UIControlStateNormal];
-            default: [self.biometricButton setTitle: self.presentationStrings.touchIdButtonTitle forState:UIControlStateNormal];
+            case GxPasscodeBiometryTypeFaceID: [self.biometricButton setTitle: self.presentationData.faceIdButtonTitle forState:UIControlStateNormal];
+            default: [self.biometricButton setTitle: self.presentationData.touchIdButtonTitle forState:UIControlStateNormal];
         }
     }
 }

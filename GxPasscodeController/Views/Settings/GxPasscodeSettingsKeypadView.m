@@ -38,13 +38,13 @@ const CGFloat kGxPasscodeSettingsKeypadCornderRadius = 12.0f;
 
 @property (nonatomic, strong) UIImage *buttonBackgroundImage;
 @property (nonatomic, strong) UIImage *buttonTappedBackgroundImage;
-@property (nonatomic, readwrite) GxPasscodePresentationStrings *presentationStrings;
+@property (nonatomic, readwrite) GxPasscodePresentationData *presentationStrings;
 @end
 
 @implementation GxPasscodeSettingsKeypadView
 
 
-- (instancetype)init:(GxPasscodePresentationStrings *) presentationStrings
+- (instancetype)init:(GxPasscodePresentationData *) presentationStrings
 {
     self = [super init];
     if (self) {

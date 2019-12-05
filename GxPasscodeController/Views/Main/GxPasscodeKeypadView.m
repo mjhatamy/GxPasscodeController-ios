@@ -39,12 +39,12 @@
 /* Images */
 @property (nonatomic, strong) UIImage *buttonImage;
 @property (nonatomic, strong) UIImage *tappedButtonImage;
-@property (nonatomic, readwrite) GxPasscodePresentationStrings *presentationStrings;
+@property (nonatomic, readwrite) GxPasscodePresentationData *presentationStrings;
 @end
 
 @implementation GxPasscodeKeypadView
 
-- (instancetype)init:(GxPasscodePresentationStrings *)presentationStrings
+- (instancetype)init:(GxPasscodePresentationData *)presentationStrings
 {
     self = [super init];
     if (self) {

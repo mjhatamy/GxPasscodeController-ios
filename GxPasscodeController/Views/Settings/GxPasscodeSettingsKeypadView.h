@@ -23,7 +23,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GxPasscodeViewControllerConstants.h"
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 /* In really small sizes, set the keypad labels to horizontal */
 - (void)setButtonLabelHorizontalLayout:(BOOL)horizontal animated:(BOOL)animated;
 
-- (instancetype)init:(GxPasscodePresentationStrings *) presentationStrings;
+- (instancetype)init:(GxPasscodePresentationData *) presentationStrings;
 
 @end
 

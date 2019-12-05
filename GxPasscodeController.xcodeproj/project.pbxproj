@@ -43,11 +43,22 @@
 		C3FAA1A6237B9DEA00D0F38D /* GxPasscodeKeypadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA190237B9DEA00D0F38D /* GxPasscodeKeypadView.m */; };
 		C3FAA1A7237B9DEA00D0F38D /* GxPasscodeCircleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA191237B9DEA00D0F38D /* GxPasscodeCircleButton.h */; };
 		C3FAA1A8237B9DEA00D0F38D /* GxPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA192237B9DEA00D0F38D /* GxPasscodeView.m */; };
-		C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */; };
+		C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationData.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationData.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationData.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C3D790B52382488300E52B92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3D790B12382488300E52B92 /* example.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C3FAA1BB237BAF3700D0F38D;
+			remoteInfo = example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C3D790B12382488300E52B92 /* example.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = example.xcodeproj; path = Example/example/example.xcodeproj; sourceTree = "<group>"; };
 		C3FAA150237B9D0C00D0F38D /* GxPasscodeController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GxPasscodeController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FAA153237B9D0D00D0F38D /* GxPasscodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GxPasscodeController.h; sourceTree = "<group>"; };
 		C3FAA154237B9D0D00D0F38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,8 +97,8 @@
 		C3FAA190237B9DEA00D0F38D /* GxPasscodeKeypadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeKeypadView.m; sourceTree = "<group>"; };
 		C3FAA191237B9DEA00D0F38D /* GxPasscodeCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GxPasscodeCircleButton.h; sourceTree = "<group>"; };
 		C3FAA192237B9DEA00D0F38D /* GxPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GxPasscodeView.m; sourceTree = "<group>"; };
-		C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GxPasscodePresentationStrings.h; sourceTree = "<group>"; };
-		C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GxPasscodePresentationStrings.m; sourceTree = "<group>"; };
+		C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GxPasscodePresentationData.h; sourceTree = "<group>"; };
+		C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GxPasscodePresentationData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +112,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3D790B22382488300E52B92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3D790B62382488300E52B92 /* example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C3FAA146237B9D0C00D0F38D = {
 			isa = PBXGroup;
 			children = (
+				C3D790B12382488300E52B92 /* example.xcodeproj */,
 				C3FAA152237B9D0D00D0F38D /* GxPasscodeController */,
 				C3FAA151237B9D0C00D0F38D /* Products */,
 			);
@@ -129,8 +149,8 @@
 				C3FAA15E237B9D9900D0F38D /* GxPasscodeViewController.m */,
 				C3FAA153237B9D0D00D0F38D /* GxPasscodeController.h */,
 				C3FAA154237B9D0D00D0F38D /* Info.plist */,
-				C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationStrings.h */,
-				C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationStrings.m */,
+				C3FAA1AE237BADC300D0F38D /* GxPasscodePresentationData.h */,
+				C3FAA1AF237BADC300D0F38D /* GxPasscodePresentationData.m */,
 			);
 			path = GxPasscodeController;
 			sourceTree = "<group>";
@@ -235,7 +255,7 @@
 				C3FAA199237B9DEA00D0F38D /* GxPasscodeCircleView.h in Headers */,
 				C3FAA167237B9DAB00D0F38D /* GxPasscodeViewControllerConstants.h in Headers */,
 				C3FAA162237B9D9900D0F38D /* GxPasscodeViewController.h in Headers */,
-				C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationStrings.h in Headers */,
+				C3FAA1B0237BADC300D0F38D /* GxPasscodePresentationData.h in Headers */,
 				C3FAA19C237B9DEA00D0F38D /* GxPasscodeButtonLabel.h in Headers */,
 				C3FAA19B237B9DEA00D0F38D /* GxPasscodeVariableInputView.h in Headers */,
 			);
@@ -287,12 +307,28 @@
 			mainGroup = C3FAA146237B9D0C00D0F38D;
 			productRefGroup = C3FAA151237B9D0C00D0F38D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3D790B22382488300E52B92 /* Products */;
+					ProjectRef = C3D790B12382488300E52B92 /* example.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C3FAA14F237B9D0C00D0F38D /* GxPasscodeController */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3D790B62382488300E52B92 /* example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = example.app;
+			remoteRef = C3D790B52382488300E52B92 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3FAA14E237B9D0C00D0F38D /* Resources */ = {
@@ -324,7 +360,7 @@
 				C3FAA1A8237B9DEA00D0F38D /* GxPasscodeView.m in Sources */,
 				C3FAA178237B9DD000D0F38D /* GxPasscodeViewContentLayout.m in Sources */,
 				C3FAA19E237B9DEA00D0F38D /* GxPasscodeFixedInputView.m in Sources */,
-				C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationStrings.m in Sources */,
+				C3FAA1B1237BADC300D0F38D /* GxPasscodePresentationData.m in Sources */,
 				C3FAA1A0237B9DEA00D0F38D /* GxPasscodeButtonLabel.m in Sources */,
 				C3FAA1A6237B9DEA00D0F38D /* GxPasscodeKeypadView.m in Sources */,
 			);

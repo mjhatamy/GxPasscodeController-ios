@@ -24,7 +24,7 @@
 #import <UIKit/UIKit.h>
 #import "GxPasscodeViewControllerConstants.h"
 #import "GxPasscodeView.h"
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -84,6 +84,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** Will show a default 'Cancel' button if rightAccessoryButton is not set. (Default is YES) */
 @property (nonatomic, assign) BOOL allowCancel;
+
+- (void)setAllowCancel:(BOOL)allowCancel;
 
 /** Set the type of biometrics for this device to update the title of the biometrics button properly. */
 @property (nonatomic, assign) GxPasscodeBiometryType biometryType;
@@ -145,7 +147,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param type The type of passcode to enter (6-digit/numeric)
  @param presentationStrings Strings used for displaying text objects and messages
  */
-- (instancetype)initWithType:(GxPasscodeType)type presentationString:(GxPasscodePresentationStrings *)presentationStrings NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithType:(GxPasscodeType)type presentationString:(GxPasscodePresentationData *)presentationStrings NS_DESIGNATED_INITIALIZER;
 
 /**
  Hide everything except the background translucency view.

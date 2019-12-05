@@ -18,6 +18,6 @@ FOUNDATION_EXPORT const unsigned char GxPasscodeControllerVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <GxPasscodeController/PublicHeader.h>
 
 
-#import "GxPasscodePresentationStrings.h"
+#import "GxPasscodePresentationData.h"
 #import "GxPasscodeSettingsViewController.h"
 #import "GxPasscodeViewController.h"
