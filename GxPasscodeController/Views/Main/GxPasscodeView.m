@@ -430,8 +430,9 @@
     self.titleLabel.textColor = titleLabelColor;
 
     // Add/remove the translucency effect to the buttons
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterialDark];
-    UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
+    
+    //UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterialDark];
+    //UIVibrancyEffect *vibrancyEffect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
     //self.inputField.visualEffectView.effect = vibrancyEffect;
     //self.keypadView.vibrancyEffect = vibrancyEffect;
 
