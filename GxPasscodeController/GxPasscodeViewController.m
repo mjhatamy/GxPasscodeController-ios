@@ -26,6 +26,7 @@
 #import "GxPasscodeViewControllerAnimatedTransitioning.h"
 #import "GxPasscodeKeypadView.h"
 #import "GxPasscodeInputField.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 
 
@@ -203,7 +204,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = self.presentationData.backgroundColor;
+    if(self.presentationData.transitionBackgroundColor  != NULL ) {
+        self.view.backgroundColor = self.presentationData.transitionBackgroundColor;
+    } else {
+        self.view.backgroundColor = self.presentationData.backgroundColor;
+    }
+    
     self.view.layer.allowsGroupOpacity = NO;
     [self setUpBackgroundEffectView];
     [self setUpBackgroundView];
@@ -213,6 +219,12 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    if(self.presentationData.transitionBackgroundColor  != NULL ) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.view.backgroundColor = self.presentationData.backgroundColor;
+        }];
+    }
 
     // Automatically trigger biometric validation if available
     if (self.allowBiometricValidation && self.automaticallyPromptForBiometricValidation) {
@@ -488,10 +500,12 @@
     // Validate the code
     BOOL isCorrect = [self.delegate passcodeViewController:self isCorrectCode:passcode];
     if (!isCorrect) {
+        AudioServicesPlaySystemSound(1102);
         [self.passcodeView resetPasscodeAnimated:YES playImpact:YES];
         return;
     }
 
+    AudioServicesPlaySystemSound(1101);
     // Hang onto the fact the passcode was successful to play a nicer dismissal animation
     self.passcodeSuccess = YES;
 

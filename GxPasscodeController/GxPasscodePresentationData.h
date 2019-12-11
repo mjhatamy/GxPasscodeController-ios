@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GxPasscodePresentationData : NSObject
 
 @property (nonatomic, strong) UIColor* backgroundColor;
+@property (nonatomic, strong) UIColor* transitionBackgroundColor;
 @property (nonatomic, strong) UIColor* keypadButtonHighlightedTextColor;
 
 @property (nonatomic, strong) NSString* deleteButtonTitle;

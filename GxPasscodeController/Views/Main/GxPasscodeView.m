@@ -26,6 +26,7 @@
 #import "GxPasscodeCircleButton.h"
 #import "GxPasscodeInputField.h"
 #import "GxPasscodeKeypadView.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface GxPasscodeView ()
 
@@ -371,6 +372,8 @@
             self.keypadView = [[GxPasscodeKeypadView alloc] init:(self.presentationData)];
         }
         self.keypadView.buttonTappedHandler = ^(NSInteger button) {
+            AudioServicesPlaySystemSound(1104); // KeyPressed tonk
+            
             NSString *numberString = [NSString stringWithFormat:@"%ld", (long)button];
             [weakSelf.inputField appendPasscodeCharacters:numberString animated:NO];
 

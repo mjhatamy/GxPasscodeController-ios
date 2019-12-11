@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "518"
             endingLineNumber = "518"
-            landmarkName = "-setTitleLabelColor:"
+            landmarkName = "-setCurrentLayout:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
